@@ -1,0 +1,132 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        Search Results Page
+      </h1>
+    </header>
+    
+<form action="/search" method="get">
+  <div>
+    <label for="searchin">Search Field:</label>
+    
+    <select name="searchin" id="searchin" value="">
+      <option value="all">All</option>
+      <option value="title">Title</option>
+      <option value="genre">Genre</option>
+      <option value="director">Director</option>
+      <option value="actor">Actor</option>
+      <option value="keyword">Keyword</option>
+
+      
+    </select>
+    
+    <label for="orderby">Order by:</label>
+
+    <select name="orderby" id="orderby" value="">
+      <option value="title">Title</option>
+      <option value="imdb">IMDB Score</option>
+    </select>
+    
+  </div>
+  <div>
+    <label for="searchval">Search for what?</label>
+    <input name="searchval" id="searchval" value="">
+  </div>
+  <div>
+    <button>Search</button>
+  </div>
+</form>
+    
+    
+    <hr/>
+    
+
+    <main>
+      <% results.forEach(function(r) { %>
+      
+
+        <div><%= r.imdb_id%></div>
+        <div><%= r.color%></div>
+        <div><%= r.director_name%></div>
+        <div><%= r.num_critic_for_reviews%></div>
+        <div><%= r.duration%></div>
+        <div><%= r.director_facebook_likes%></div>
+        <div><%= r.actor_3_facebook_likes%></div>
+        <div><%= r.actor_2_name%></div>
+        <div><%= r.actor_1_facebook_likes%></div>
+        <div><%= r.gross%></div>
+      
+        <div> 
+          <% r.genres.forEach(function(g) { %>
+            <span><%=g%></span>
+          <% }) %>          
+        </div> 
+          
+        
+        <div><%= r.actor_1_name%></div>
+        <div><%= r.movie_title%></div>
+        <div><%= r.num_voted_users%></div>
+        <div><%= r.cast_total_facebook_likes%></div>
+        <div><%= r.actor_3_name%></div>
+        <div><%= r.facenumber_in_poster%></div>
+        <div> 
+          <% r.plot_keywords.forEach(function(pk) { %>
+            <span><%=pk%></span>
+          <% }) %>          
+        </div>       
+      
+        <div><%= r.movie_imdb_link%></div>
+        <div><%= r.num_user_for_reviews%></div>
+        <div><%= r.language%></div>
+        <div><%= r.country%></div>
+        <div><%= r.content_rating%></div>
+        <div><%= r.budget%></div>
+        <div><%= r.title_year%></div>
+        <div><%= r.actor_2_facebook_likes%></div>
+        <div><%= r.imdb_score%></div>
+        <div><%= r.aspect_ratio%></div>
+        <div><%= r.movie_facebook_likes%></div>
+        <div><%= r.poster%></div>
+      
+        <hr/>
+      
+      <% }) %>     
+
+    </main>
+
+    <footer>
+      Made with <a href="https://glitch.com">Glitch</a>!
+    </footer>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+
+  </body>
+</html>

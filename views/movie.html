@@ -1,0 +1,102 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta name="description" content="A cool thing made with Glitch" />
+    <link
+      id="favicon"
+      rel="icon"
+      href="https://glitch.com/edit/favicon-app.ico"
+      type="image/x-icon"
+    />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>movie page</h1>
+    </header>
+
+    <main>
+      <a href="<%=referer%>">Back to search results</a>
+
+      <div>
+        <strong>imdb_id</strong>: <a href="/movie/<%=imdb_id%>"><%=imdb_id%></a>
+      </div>
+      <div><strong>color</strong>: <%=color%></div>
+      <div><strong>director_name</strong>: <%=director_name%></div>
+      <div>
+        <strong>num_critic_for_reviews</strong>: <%=num_critic_for_reviews%>
+      </div>
+      <div><strong>duration</strong>: <%=duration%></div>
+      <div>
+        <strong>director_facebook_likes</strong>: <%=director_facebook_likes%>
+      </div>
+      <div>
+        <strong>actor_3_facebook_likes</strong>: <%=actor_3_facebook_likes%>
+      </div>
+      <div><strong>actor_2_name</strong>: <%=actor_2_name%></div>
+      <div>
+        <strong>actor_1_facebook_likes</strong>: <%=actor_1_facebook_likes%>
+      </div>
+      <div><strong>gross</strong>: <%=gross%></div>
+      <div><strong>genres</strong>: <%=genres%></div>
+      <div><strong>actor_1_name</strong>: <%=actor_1_name%></div>
+      <div><strong>movie_title</strong>: <%=movie_title%></div>
+      <div><strong>num_voted_users</strong>: <%=num_voted_users%></div>
+      <div>
+        <strong>cast_total_facebook_likes</strong>:
+        <%=cast_total_facebook_likes%>
+      </div>
+      <div><strong>actor_3_name</strong>: <%=actor_3_name%></div>
+      <div>
+        <strong>facenumber_in_poster</strong>: <%=facenumber_in_poster%>
+      </div>
+      <div><strong>plot_keywords</strong>: <%=plot_keywords%></div>
+      <div><strong>movie_imdb_link</strong>: <%=movie_imdb_link%></div>
+      <div>
+        <strong>num_user_for_reviews</strong>: <%=num_user_for_reviews%>
+      </div>
+      <div><strong>language</strong>: <%=language%></div>
+      <div><strong>country</strong>: <%=country%></div>
+      <div><strong>content_rating</strong>: <%=content_rating%></div>
+      <div><strong>budget</strong>: <%=budget%></div>
+      <div><strong>title_year</strong>: <%=title_year%></div>
+      <div>
+        <strong>actor_2_facebook_likes</strong>: <%=actor_2_facebook_likes%>
+      </div>
+      <div><strong>imdb_score</strong>: <%=imdb_score%></div>
+      <div><strong>aspect_ratio</strong>: <%=aspect_ratio%></div>
+      <div>
+        <strong>movie_facebook_likes</strong>: <%=movie_facebook_likes%>
+      </div>
+      <div><strong>poster</strong>: <%=poster%></div>
+    </main>
+
+    <footer>Made with <a href="https://glitch.com">Glitch</a>!</footer>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div
+      class="glitchButton"
+      style="position: fixed; top: 20px; right: 20px"
+    ></div>
+    <script src="https://button.glitch.me/button.js"></script>
+  </body>
+</html>
